@@ -1,0 +1,168 @@
+div {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+/* =========================
+        transition
+===========================*/
+
+/* 
+transition = shorthand
+transition-delay = verzögerung
+transition-duration = dauer
+transition-property = auf was soll das gemacht ?
+transition-timing-function = wie soll es verlaufen? 
+*/
+
+.div1 {
+    background-color: crimson;
+    transition-property: width;
+    /* transition-duration: 1000ms; */
+    transition-duration: 1s;
+    /* starte bitte erst nach ...sekunden */
+    /* transition-delay: 3s; */
+    transition-timing-function: ease;
+}
+
+.div1:hover {
+    width: 300px;
+}
+
+.div2 {
+    background-color: yellow;
+    transition-duration: 1s;
+    transition-property: width border-radius background-color;
+    transition-timing-function: linear;
+}
+
+.div2:hover {
+    width: 300px;
+    border-radius: 20px;
+    background-color: goldenrod;
+}
+
+.div3 {
+    background-color: blue;
+    transition-duration: 1s;
+    transition-property: width border-radius;
+    transition-timing-function: ease-in;
+}
+
+/* transition-timing-function
+linear
+ease
+ease-in
+ease-out
+ease-in-out
+*/
+
+.div3:hover {
+    width: 500px;
+    border-radius: 20px;
+}
+
+.div4 {
+    background-color: green;
+    /* transform: scaleX(1.5); */
+}
+
+.div5 {
+    background-color: tomato;
+}
+
+/* =========================
+        transform
+===========================*/
+
+/* 
+ translate = shorthand
+ translateX
+ translateY
+ scale = shorthand
+ scaleX
+ scaleY
+ rotate = shorthand
+ rotateX
+ rotateY
+ rotateZ
+*/
+
+.button1 {
+    /* transform: translateX(500px) translateY(-200px); */
+    /* transform: translate(x, y); */
+    transform: translate(500px, -200px);
+}
+
+.button2 {
+    /* arbeitet mit faktor, zb 3 = 3 * die breite des elements */
+    transform: translateX(500px) scaleX(3) scaleY(3);
+}
+
+.button3 {
+    transform: rotateZ(60deg);
+}
+
+.button5 {
+    transform: translateY(200px);
+    transition: transform 500ms ease;
+}
+
+.button5:hover {
+    transform: translateY(200px) scale(1.4) rotateZ(180deg);
+    cursor: pointer;
+}
+
+/* =========================
+        animation
+===========================*/
+
+.animation_div {
+    background-color: turquoise;
+    animation-name: boxToCircle;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin: 10vh 5%;
+}
+
+@keyframes boxToCircle {
+
+    /* from to oder in teilschritten (%) */
+    /*from {
+        
+        background-color: red;
+    }
+
+    to {
+       
+        background-color: yellow;
+    } */
+    /* achte darauf das 0% & 100% die gleichen properties haben, damit deine animation smooth aussieht */
+    0% {
+        transform: scale(1) translateX(0px) rotateZ(0deg);
+    }
+
+    25% {
+        transform: scale(1) translateX(400px) rotateZ(90deg);
+        background-color: tomato;
+        border-radius: 50%;
+    }
+
+    50% {
+        transform: scale(1) translateX(400px) translateY(400px) rotateZ(-90deg);
+        background-color: green;
+        border-radius: 0%;
+    }
+
+    75% {
+        transform: scale(1) translateX(0) translateY(400px) rotateZ(90deg);
+        background-color: red;
+        /* border-radius: 50%; */
+    }
+
+    100% {
+        transform: scale(1) translateX(0px) rotateZ(0deg);
+    }
+}

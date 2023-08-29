@@ -1,0 +1,15 @@
+
+div{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(246, 100, 74);
+    margin: 45px;
+    border-radius: 5px;
+    transition: all;
+    transition-duration: 1s;
+}
+
+div:hover{
+    transform: rotate(90deg) scale(1.2);
+    transform-origin: 10% 55%;
+}
